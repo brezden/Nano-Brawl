@@ -4,9 +4,10 @@ using System;
 public partial class Detonix : CharacterBody2D
 {
 	private AnimationPlayer _animationPlayer;
-
+	private Node target;
+	
 	public override void _Ready()
-	{
+	{	
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
@@ -22,4 +23,10 @@ public partial class Detonix : CharacterBody2D
 			_animationPlayer.Stop();
 		}
 	}
+
+	public void SetTarget(Node playerNode)
+    {
+        target = playerNode;
+        GD.Print("Target set to: " + target);
+    }
 }

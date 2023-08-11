@@ -6,7 +6,7 @@ public partial class Player : Godot.CharacterBody2D {
     int Acceleration = 500;
     int MaxSpeed = 60;
     int Friction = 500;
-
+    
     // AnimationPlayer RobotAnimation;
     // AnimationTree RobotAnimationTree;
     // AnimationNodeStateMachinePlayback StateMachine;
@@ -35,7 +35,6 @@ public partial class Player : Godot.CharacterBody2D {
             // StateMachine.Travel("Idle");
             Velocity = Velocity.MoveToward(Vector2.Zero, Friction * (float)delta);
         }
-
         MoveAndSlide();
     }
 }

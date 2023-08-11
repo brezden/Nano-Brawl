@@ -1,47 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxxikcesg8gvo"]
+[gd_scene load_steps=4 format=3 uid="uid://bxxikcesg8gvo"]
 
 [ext_resource type="PackedScene" uid="uid://bydbodgvhoa5h" path="res://scenes/player/Player.tscn" id="1_eyrqw"]
 [ext_resource type="PackedScene" uid="uid://dksfo8p82tcqa" path="res://scenes/maps/area_one.tscn" id="2_kcgkt"]
 [ext_resource type="PackedScene" uid="uid://ckiittb21fiqo" path="res://scenes/enemies/Detonix.tscn" id="3_g01uu"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_v8yi4"]
-script/source = "using Godot;
-using System;
-
-public partial class main : Node2D
-{
-
-	private Sprite2D _icon;
-
-	private Vector2 _startPosition = new Vector2(-50,250);
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		_icon = GetNode<Sprite2D>(\"Icon\");
-		GD.Print(\"Hello World!\");
-		
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		_icon.Position += new Vector2(100,0) * (float)delta;
-		if(_icon.Position.X > 1000){
-			_icon.Position = _startPosition;
-		}
-	}
-}
-"
-
 [node name="Main" type="Node2D"]
-script = SubResource("CSharpScript_v8yi4")
-
-[node name="Player" parent="." instance=ExtResource("1_eyrqw")]
-z_index = 1
-position = Vector2(106, 115)
 
 [node name="area_one" parent="." instance=ExtResource("2_kcgkt")]
 
-[node name="Detonix" parent="." instance=ExtResource("3_g01uu")]
+[node name="Detonix" parent="." groups=["enemy"] instance=ExtResource("3_g01uu")]
 position = Vector2(58, 99)
+script = null
+
+[node name="Player" parent="." instance=ExtResource("1_eyrqw")]
+script = null
