@@ -4,8 +4,11 @@ using System;
 public partial class Main : Node2D
 {
 	public override void _Ready()
-	{
+	{	
+	}
 
-		GetTree().CallGroup("enemy", "set_target", GetNode("Player"));
+	public override void _PhysicsProcess(double delta)
+	{
+		GetTree().CallGroup("enemy", "SetTarget", GetNode("Player"));
 	}
 }
