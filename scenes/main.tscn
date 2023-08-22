@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxxikcesg8gvo"]
+[gd_scene load_steps=8 format=3 uid="uid://bxxikcesg8gvo"]
 
 [ext_resource type="PackedScene" uid="uid://bydbodgvhoa5h" path="res://scenes/player/Player.tscn" id="1_eyrqw"]
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_tt22f"]
 [ext_resource type="PackedScene" uid="uid://dksfo8p82tcqa" path="res://scenes/maps/area_one.tscn" id="2_kcgkt"]
 [ext_resource type="PackedScene" uid="uid://ckiittb21fiqo" path="res://scenes/enemies/Detonix.tscn" id="3_g01uu"]
 [ext_resource type="Script" path="res://scripts/enemies/EnemySpawner.cs" id="5_hwu8s"]
+[ext_resource type="FontFile" uid="uid://beepssgt1ecve" path="res://assets/fonts/Minimal5x5Monospaced.ttf" id="6_hys78"]
+[ext_resource type="Script" path="res://scenes/Score.cs" id="7_44bia"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tt22f")
@@ -18,3 +20,15 @@ position = Vector2(7, 122)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("5_hwu8s")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 61.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("6_hys78")
+theme_override_font_sizes/font_size = 8
+text = "Enemies: 0"
+horizontal_alignment = 1
+justification_flags = 3
+script = ExtResource("7_44bia")
