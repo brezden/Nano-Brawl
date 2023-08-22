@@ -21,7 +21,7 @@ position = Vector2(7, 122)
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("5_hwu8s")
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." groups=["score"]]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 61.0

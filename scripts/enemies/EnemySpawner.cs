@@ -11,7 +11,9 @@ public partial class EnemySpawner : Node2D
     public override void _Ready()
     {
         DetonixScene = ResourceLoader.Load<PackedScene>("res://scenes/enemies/Detonix.tscn").Instantiate();
-        SpawnEnemies(15);
+        int enemyCount = 15;
+        SpawnEnemies(enemyCount);
+        GetTree().CallGroup("score", "SetScore", enemyCount);
     }
 
     public void SpawnEnemies(int enemyAmount)
