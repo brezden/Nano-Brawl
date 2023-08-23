@@ -7,6 +7,8 @@ public partial class Player : Godot.CharacterBody2D {
     int MaxSpeed = 60;
     int Friction = 500;
     
+    Signal Hit;
+
     // AnimationPlayer RobotAnimation;
     // AnimationTree RobotAnimationTree;
     // AnimationNodeStateMachinePlayback StateMachine;
@@ -18,6 +20,14 @@ public partial class Player : Godot.CharacterBody2D {
     // }
 
     public override void _PhysicsProcess(double delta) {
+
+        for(int i = 0; i < GetSlideCollisionCount(); i++){
+            KinematicCollision2D CollisionObject = GetSlideCollision(i);
+            Node CollidedNode = (Node)CollisionObject.GetCollider();
+            GD.Print("I collided with ", CollidedNode);
+            CollidedNode.EmitSignal("Hit");
+        }
+
         Vector2 InputVector = Vector2.Zero;
         InputVector.X = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
         InputVector.Y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
@@ -31,6 +41,7 @@ public partial class Player : Godot.CharacterBody2D {
             Velocity = Velocity.MoveToward(InputVector * MaxSpeed, Acceleration * (float)delta);
         } 
         
+
         else {
             // StateMachine.Travel("Idle");
             Velocity = Velocity.MoveToward(Vector2.Zero, Friction * (float)delta);

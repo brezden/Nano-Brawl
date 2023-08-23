@@ -10,7 +10,7 @@ public partial class Detonix : CharacterBody2D
 	private float delta;
 
 	public override void _Ready()
-	{
+	{	
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
