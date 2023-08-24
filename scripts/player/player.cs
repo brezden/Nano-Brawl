@@ -24,8 +24,11 @@ public partial class Player : Godot.CharacterBody2D {
         for(int i = 0; i < GetSlideCollisionCount(); i++){
             KinematicCollision2D CollisionObject = GetSlideCollision(i);
             Node CollidedNode = (Node)CollisionObject.GetCollider();
-            GD.Print("I collided with ", CollidedNode);
-            CollidedNode.EmitSignal("Hit");
+            GD.Print(CollidedNode);
+            if (CollidedNode.IsInGroup("enemy")){
+                CollidedNode.QueueFree();
+                GD.Print("Hit");
+            }
         }
 
         Vector2 InputVector = Vector2.Zero;

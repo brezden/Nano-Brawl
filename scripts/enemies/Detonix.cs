@@ -20,6 +20,9 @@ public partial class Detonix : CharacterBody2D
 		_animationPlayer.Play("idle");
 	}
 
+	public void hit(){
+	}
+
 	public void SetTarget(Player playerNode)
 	{	
 		targetPosition = playerNode.Position;
