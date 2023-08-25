@@ -7,7 +7,15 @@ public partial class Player : Godot.CharacterBody2D {
     int MaxSpeed = 60;
     int Friction = 500;
     
-    Signal Hit;
+    [Signal]
+    public delegate void EnemyHitEventHandler();
+
+
+    public override void _Ready(){
+        EnemyHit += () => {
+            GD.Print("EnemyHit");
+        };
+    }
 
     // AnimationPlayer RobotAnimation;
     // AnimationTree RobotAnimationTree;
@@ -26,8 +34,7 @@ public partial class Player : Godot.CharacterBody2D {
             Node CollidedNode = (Node)CollisionObject.GetCollider();
             GD.Print(CollidedNode);
             if (CollidedNode.IsInGroup("enemy")){
-                CollidedNode.QueueFree();
-                GD.Print("Hit");
+                EmitSignal(SignalName.EnemyHit);
             }
         }
 
