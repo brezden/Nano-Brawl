@@ -12,9 +12,7 @@ public partial class Player : Godot.CharacterBody2D {
 
 
     public override void _Ready(){
-        EnemyHit += () => {
-            GD.Print("EnemyHit");
-        };
+
     }
 
     // AnimationPlayer RobotAnimation;
@@ -32,7 +30,6 @@ public partial class Player : Godot.CharacterBody2D {
         for(int i = 0; i < GetSlideCollisionCount(); i++){
             KinematicCollision2D CollisionObject = GetSlideCollision(i);
             Node CollidedNode = (Node)CollisionObject.GetCollider();
-            GD.Print(CollidedNode);
             if (CollidedNode.IsInGroup("enemy")){
                 EmitSignal(SignalName.EnemyHit);
             }

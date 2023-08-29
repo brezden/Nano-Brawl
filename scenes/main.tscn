@@ -32,3 +32,5 @@ text = "Enemies: 0"
 horizontal_alignment = 1
 justification_flags = 3
 script = ExtResource("7_44bia")
+
+[connection signal="EnemyHit" from="Player" to="Detonix" method="_on_player_enemy_hit"]

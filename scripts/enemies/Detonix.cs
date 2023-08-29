@@ -20,7 +20,9 @@ public partial class Detonix : CharacterBody2D
 		_animationPlayer.Play("idle");
 	}
 
-	public void hit(){
+	public void _on_player_enemy_hit(){
+		GD.Print("Detonix hit");
+		QueueFree();
 	}
 
 	public void SetTarget(Player playerNode)
