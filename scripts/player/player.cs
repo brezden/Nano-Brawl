@@ -8,8 +8,7 @@ public partial class Player : Godot.CharacterBody2D {
     int Friction = 500;
     
     [Signal]
-    public delegate void EnemyHitEventHandler();
-
+    public delegate void EnemyHitWithArgumentEventHandler(Detonix detonix);
 
     public override void _Ready(){
 
@@ -28,12 +27,13 @@ public partial class Player : Godot.CharacterBody2D {
     public override void _PhysicsProcess(double delta) {
 
         for(int i = 0; i < GetSlideCollisionCount(); i++){
-            KinematicCollision2D CollisionObject = GetSlideCollision(i);
-            Node CollidedNode = (Node)CollisionObject.GetCollider();
-            if (CollidedNode.IsInGroup("enemy")){
-                EmitSignal(SignalName.EnemyHit);
-            }
+        KinematicCollision2D collisionObject = GetSlideCollision(i);
+        Node collidedNode = collisionObject?.GetCollider() as Node;
+
+        if (collisionObject != null && collidedNode != null && collidedNode.IsInGroup("enemy") && collidedNode is Detonix) {
+            EmitSignal(nameof(EnemyHitWithArgument), collidedNode as Detonix);
         }
+    }
 
         Vector2 InputVector = Vector2.Zero;
         InputVector.X = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");

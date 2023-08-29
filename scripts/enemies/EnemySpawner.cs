@@ -42,4 +42,10 @@ public partial class EnemySpawner : Node2D
             AddChild(enemy);
         }
     }
+
+    public void _on_player_enemy_hit_with_argument(Detonix enemy)
+    {
+        GD.Print(enemy);
+        enemy.QueueFree();
+    }
 }

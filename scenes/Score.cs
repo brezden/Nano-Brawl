@@ -10,4 +10,9 @@ public partial class Score : Label
 		enemies += enemyCount;
 		Text = "Enemies: " + enemies;
 	}
+
+	public void EnemyRemoved(Detonix enemy){
+		enemies--;
+		Text = "Enemies: " + enemies + "(" + enemy + ")";
+	}
 }
