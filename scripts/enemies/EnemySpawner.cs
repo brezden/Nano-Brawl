@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 public partial class EnemySpawner : Node2D
-{
+{   
+    [Signal]
+    public delegate void EnemySpawnWithArgumentEventHandler(int amount);
+
     private Node DetonixScene;
     private static Random random = new Random();
 
@@ -19,7 +22,8 @@ public partial class EnemySpawner : Node2D
     public void SpawnEnemies(int enemyAmount)
     {
         for (int i = 1; i <= enemyAmount; i++)
-        {
+        {   
+            GD.Print(i);
             int randomNumber = random.Next(0, 4);
             var enemy = DetonixScene.Duplicate() as Detonix;
 
@@ -45,7 +49,7 @@ public partial class EnemySpawner : Node2D
 
     public void _on_player_enemy_hit_with_argument(Detonix enemy)
     {
-        GD.Print(enemy);
         enemy.QueueFree();
+        EmitSignal(nameof(EnemySpawnWithArgument), 1);
     }
 }

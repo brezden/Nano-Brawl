@@ -35,3 +35,4 @@ script = ExtResource("7_44bia")
 
 [connection signal="EnemyHitWithArgument" from="Player" to="EnemySpawner" method="_on_player_enemy_hit_with_argument"]
 [connection signal="EnemyHitWithArgument" from="Player" to="Score" method="EnemyRemoved"]
+[connection signal="EnemySpawnWithArgument" from="EnemySpawner" to="EnemySpawner" method="SpawnEnemies"]
