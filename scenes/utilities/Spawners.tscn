@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbqbwja42or81"]
+
+[ext_resource type="Script" path="res://scripts/utilities/Spawners.cs" id="1_y1cpw"]
+
+[node name="Spawners" type="Node2D"]
+script = ExtResource("1_y1cpw")
+
+[node name="Left Spawn" type="Marker2D" parent="."]
+position = Vector2(0, 136)
+
+[node name="Right Spawn" type="Marker2D" parent="."]
+position = Vector2(288, 138)
+
+[node name="Top Spawn" type="Marker2D" parent="."]
+position = Vector2(141, 0)
+
+[node name="Bottom Spawn" type="Marker2D" parent="."]
+position = Vector2(143, 288)

@@ -4,22 +4,20 @@
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_tt22f"]
 [ext_resource type="PackedScene" uid="uid://dksfo8p82tcqa" path="res://scenes/maps/area_one.tscn" id="2_kcgkt"]
 [ext_resource type="PackedScene" uid="uid://ckiittb21fiqo" path="res://scenes/enemies/Detonix.tscn" id="3_g01uu"]
-[ext_resource type="Script" path="res://scripts/enemies/EnemySpawner.cs" id="5_hwu8s"]
 [ext_resource type="FontFile" uid="uid://beepssgt1ecve" path="res://assets/fonts/Minimal5x5Monospaced.ttf" id="6_hys78"]
 [ext_resource type="Script" path="res://scenes/Score.cs" id="7_44bia"]
+[ext_resource type="PackedScene" uid="uid://cbqbwja42or81" path="res://scenes/utilities/Spawners.tscn" id="7_na84f"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tt22f")
 
 [node name="area_one" parent="." instance=ExtResource("2_kcgkt")]
+position = Vector2(0, 0)
 
 [node name="Detonix" parent="." instance=ExtResource("3_g01uu")]
 position = Vector2(7, 122)
 
 [node name="Player" parent="." instance=ExtResource("1_eyrqw")]
-
-[node name="EnemySpawner" type="Node2D" parent="."]
-script = ExtResource("5_hwu8s")
 
 [node name="Score" type="Label" parent="." groups=["score"]]
 offset_left = 2.0
@@ -33,6 +31,7 @@ horizontal_alignment = 1
 justification_flags = 3
 script = ExtResource("7_44bia")
 
-[connection signal="EnemyHitWithArgument" from="Player" to="EnemySpawner" method="_on_player_enemy_hit_with_argument"]
+[node name="Spawners" parent="." instance=ExtResource("7_na84f")]
+
 [connection signal="EnemyHitWithArgument" from="Player" to="Score" method="EnemyRemoved"]
-[connection signal="EnemySpawnWithArgument" from="EnemySpawner" to="EnemySpawner" method="SpawnEnemies"]
+[connection signal="EnemyHitWithArgument" from="Player" to="Spawners" method="_on_player_enemy_hit_with_argument"]
