@@ -32,6 +32,7 @@ justification_flags = 3
 script = ExtResource("7_44bia")
 
 [node name="Spawners" parent="." instance=ExtResource("7_na84f")]
+position = Vector2(0, -2)
 
 [connection signal="EnemyHitWithArgument" from="Player" to="Score" method="EnemyRemoved"]
 [connection signal="EnemyHitWithArgument" from="Player" to="Spawners" method="_on_player_enemy_hit_with_argument"]
