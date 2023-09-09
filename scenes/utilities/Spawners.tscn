@@ -6,13 +6,13 @@
 script = ExtResource("1_y1cpw")
 
 [node name="Left Spawn" type="Marker2D" parent="."]
-position = Vector2(0, 146)
+position = Vector2(-10, 146)
 
 [node name="Right Spawn" type="Marker2D" parent="."]
-position = Vector2(288, 147)
+position = Vector2(299, 147)
 
 [node name="Top Spawn" type="Marker2D" parent="."]
-position = Vector2(142, 1)
+position = Vector2(142, -11)
 
 [node name="Bottom Spawn" type="Marker2D" parent="."]
-position = Vector2(143, 288)
+position = Vector2(143, 295)
