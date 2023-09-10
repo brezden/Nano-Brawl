@@ -5,6 +5,13 @@ public partial class Spawners : Node2D
 {
 	[Signal]
 	public delegate void EnemySpawnWithArgumentEventHandler(int amount);
+	
+	[Signal]
+	public delegate void EnemyCounterIncreaseEventHandler();
+	
+	[Signal]
+	public delegate void EnemyCounterDecreaseEventHandler();
+
 	private Node DetonixScene;
 	private Marker2D LeftSpawner;
 	private Marker2D RightSpawner;
@@ -47,14 +54,14 @@ public partial class Spawners : Node2D
 			}
 
 			AddChild(enemy);
+			EmitSignal(SignalName.EnemyCounterIncrease);
 		}
-
-		GetTree().CallGroup("score", "SetScore", enemyAmount);
 	}
 
 	public void _on_player_enemy_hit_with_argument(Detonix enemy)
 	{
 		enemy.QueueFree();
-		SpawnEnemies(1);
+		// SpawnEnemies(1);
+		EmitSignal(SignalName.EnemyCounterDecrease);
 	}
 }

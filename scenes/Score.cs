@@ -5,14 +5,15 @@ public partial class Score : Label
 {	
 	int enemies = 0;
 
-	public void SetScore(int enemyCount)
+	public void IncreaseScore()
 	{	
-		enemies += enemyCount;
+		enemies++;
 		Text = "Enemies: " + enemies;
 	}
 
-	public void EnemyRemoved(Detonix enemy){
+	public void DecreaseScore()
+	{	
 		enemies--;
-		Text = "Enemies: " + enemies + "(" + enemy + ")";
+		Text = "Enemies: " + enemies;
 	}
 }
