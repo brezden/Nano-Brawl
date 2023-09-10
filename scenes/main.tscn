@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbqbwja42or81" path="res://scenes/utilities/Spawners.tscn" id="7_na84f"]
 
 [node name="Main" type="Node2D"]
+position = Vector2(1, 23)
 script = ExtResource("1_tt22f")
 
 [node name="area_one" parent="." instance=ExtResource("2_kcgkt")]
@@ -19,10 +20,11 @@ position = Vector2(7, 145)
 [node name="Player" parent="." instance=ExtResource("1_eyrqw")]
 
 [node name="Score" type="Label" parent="." groups=["score"]]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 61.0
-offset_bottom = 17.0
+z_index = 1
+offset_left = -2.0
+offset_top = -23.0
+offset_right = 57.0
+offset_bottom = -8.0
 theme_override_fonts/font = ExtResource("6_hys78")
 theme_override_font_sizes/font_size = 8
 text = "Enemies: 0"
@@ -32,6 +34,13 @@ script = ExtResource("7_44bia")
 
 [node name="Spawners" parent="." instance=ExtResource("7_na84f")]
 position = Vector2(0, -2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -23.0
+offset_right = 287.0
+offset_bottom = 1.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="EnemyHitWithArgument" from="Player" to="Score" method="EnemyRemoved"]
 [connection signal="EnemyHitWithArgument" from="Player" to="Spawners" method="_on_player_enemy_hit_with_argument"]
