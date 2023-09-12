@@ -1,47 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dksfo8p82tcqa"]
+[gd_scene load_steps=4 format=3 uid="uid://dksfo8p82tcqa"]
 
-[ext_resource type="Texture2D" uid="uid://1paox8jtjul" path="res://assets/tilemaps/initial_tilemap.png" id="1_prags"]
-[ext_resource type="Texture2D" uid="uid://b4dp5qmt3rnpe" path="res://assets/sprites/map/WaterSplash-Sheet.png" id="2_g8jrj"]
-[ext_resource type="Texture2D" uid="uid://bfg542e4v4uif" path="res://assets/tilemaps/floorTileSheet.png" id="3_axpcr"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2gxw"]
-texture = ExtResource("1_prags")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n280e"]
-texture = ExtResource("2_g8jrj")
-0:0/animation_columns = 12
-0:0/animation_frame_0/duration = 0.075
-0:0/animation_frame_1/duration = 0.075
-0:0/animation_frame_2/duration = 0.075
-0:0/animation_frame_3/duration = 0.075
-0:0/animation_frame_4/duration = 0.075
-0:0/animation_frame_5/duration = 0.075
-0:0/animation_frame_6/duration = 0.075
-0:0/animation_frame_7/duration = 0.075
-0:0/animation_frame_8/duration = 0.075
-0:0/animation_frame_9/duration = 0.075
-0:0/animation_frame_10/duration = 0.075
-0:0/animation_frame_11/duration = 0.075
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(1, 1)
-0:0/0/physics_layer_0/angular_velocity = 1.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[ext_resource type="Texture2D" uid="uid://bfg542e4v4uif" path="res://assets/tile_maps/floorTileSheet.png" id="3_axpcr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ee2j"]
 texture = ExtResource("3_axpcr")
@@ -115,8 +74,6 @@ texture = ExtResource("3_axpcr")
 
 [sub_resource type="TileSet" id="TileSet_gsvtk"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_i2gxw")
-sources/1 = SubResource("TileSetAtlasSource_n280e")
 sources/4 = SubResource("TileSetAtlasSource_0ee2j")
 
 [node name="area_one" type="TileMap"]

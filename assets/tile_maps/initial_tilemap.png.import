@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0bhoywjkjjpe"
-path="res://.godot/imported/count_down_bar.png-845c09012c3254f175896cf855e0adbf.ctex"
+uid="uid://1paox8jtjul"
+path="res://.godot/imported/initial_tilemap.png-c03ace73848cb4f3075112ccdff3f16f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/count_down_bar.png"
-dest_files=["res://.godot/imported/count_down_bar.png-845c09012c3254f175896cf855e0adbf.ctex"]
+source_file="res://assets/tile_maps/initial_tilemap.png"
+dest_files=["res://.godot/imported/initial_tilemap.png-c03ace73848cb4f3075112ccdff3f16f.ctex"]
 
 [params]
 

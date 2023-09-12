@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4dp5qmt3rnpe"
-path="res://.godot/imported/WaterSplash-Sheet.png-d48d23e70ec3e3fbc6271b014146c620.ctex"
+uid="uid://bfg542e4v4uif"
+path="res://.godot/imported/floorTileSheet.png-b97f122b50e62d929fab6e688cb24228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/map/WaterSplash-Sheet.png"
-dest_files=["res://.godot/imported/WaterSplash-Sheet.png-d48d23e70ec3e3fbc6271b014146c620.ctex"]
+source_file="res://assets/tile_maps/floorTileSheet.png"
+dest_files=["res://.godot/imported/floorTileSheet.png-b97f122b50e62d929fab6e688cb24228.ctex"]
 
 [params]
 

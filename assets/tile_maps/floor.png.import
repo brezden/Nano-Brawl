@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxuipauocju8l"
-path="res://.godot/imported/power_up_box.png-a2ecd1a318189c6254b2a7f4782b4424.ctex"
+uid="uid://8fb33sueda50"
+path="res://.godot/imported/floor.png-3ea816e4d560da6c6c82fb13127f2104.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/power_up_box.png"
-dest_files=["res://.godot/imported/power_up_box.png-a2ecd1a318189c6254b2a7f4782b4424.ctex"]
+source_file="res://assets/tile_maps/floor.png"
+dest_files=["res://.godot/imported/floor.png-3ea816e4d560da6c6c82fb13127f2104.ctex"]
 
 [params]
 

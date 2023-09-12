@@ -18,7 +18,12 @@ public partial class Clock : Sprite2D
 		if (CurrentTime >= 0)
 		{
 			CurrentTime -= (float)delta;
-			ClockProgress.Scale = new Vector2(1, (CurrentTime / MaxTime));
+			float scale_factor = CurrentTime / MaxTime;
+			ClockProgress.Scale = new Vector2(1, scale_factor);
+
+			float redComponent = 1 - scale_factor;
+            float greenComponent = scale_factor;
+            ClockProgress.Color = new Color(redComponent, greenComponent, 0);
 		}
 	}
 }

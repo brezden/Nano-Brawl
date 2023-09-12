@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfg542e4v4uif"
-path="res://.godot/imported/floorTileSheet.png-7562882d02df11321f3a6d0c1fdffe84.ctex"
+uid="uid://d0bhoywjkjjpe"
+path="res://.godot/imported/count_down_bar.png-8e4c2750b499155a7dfdeaa41b11244a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/floorTileSheet.png"
-dest_files=["res://.godot/imported/floorTileSheet.png-7562882d02df11321f3a6d0c1fdffe84.ctex"]
+source_file="res://assets/user_interface/count_down_bar.png"
+dest_files=["res://.godot/imported/count_down_bar.png-8e4c2750b499155a7dfdeaa41b11244a.ctex"]
 
 [params]
 

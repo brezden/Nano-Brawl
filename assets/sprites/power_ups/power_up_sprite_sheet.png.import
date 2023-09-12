@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8fb33sueda50"
-path="res://.godot/imported/floor.png-46241890f486f38cf281d9a60ff8af24.ctex"
+uid="uid://b752que6pwvak"
+path="res://.godot/imported/power_up_sprite_sheet.png-a88d39b207f7b92c740e785c63af5460.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/floor.png"
-dest_files=["res://.godot/imported/floor.png-46241890f486f38cf281d9a60ff8af24.ctex"]
+source_file="res://assets/sprites/power_ups/power_up_sprite_sheet.png"
+dest_files=["res://.godot/imported/power_up_sprite_sheet.png-a88d39b207f7b92c740e785c63af5460.ctex"]
 
 [params]
 
