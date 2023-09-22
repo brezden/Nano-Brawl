@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bxxikcesg8gvo"]
 
 [ext_resource type="PackedScene" uid="uid://bydbodgvhoa5h" path="res://scenes/player/Player.tscn" id="1_eyrqw"]
+[ext_resource type="Script" path="res://scripts/utilities/Score.cs" id="2_621w6"]
 [ext_resource type="PackedScene" uid="uid://dksfo8p82tcqa" path="res://scenes/maps/area_one.tscn" id="2_kcgkt"]
 [ext_resource type="PackedScene" uid="uid://ckiittb21fiqo" path="res://scenes/enemies/Detonix.tscn" id="3_g01uu"]
 [ext_resource type="Texture2D" uid="uid://dxuipauocju8l" path="res://assets/user_interface/power_up_box.png" id="3_ug2a7"]
 [ext_resource type="Texture2D" uid="uid://d0bhoywjkjjpe" path="res://assets/user_interface/count_down_bar.png" id="4_toruy"]
 [ext_resource type="Script" path="res://scripts/Gameplay.cs" id="6_0ffet"]
 [ext_resource type="FontFile" uid="uid://beepssgt1ecve" path="res://assets/fonts/Minimal5x5Monospaced.ttf" id="6_hys78"]
-[ext_resource type="Script" path="res://scenes/Score.cs" id="7_44bia"]
 [ext_resource type="PackedScene" uid="uid://cbqbwja42or81" path="res://scenes/utilities/Spawners.tscn" id="7_na84f"]
 [ext_resource type="Script" path="res://scripts/UI/Clock.cs" id="10_eafwj"]
 [ext_resource type="PackedScene" uid="uid://daw4uk6ica4vf" path="res://scenes/sprites/Power_Up.tscn" id="11_vyerm"]
@@ -28,7 +28,7 @@ theme_override_font_sizes/font_size = 8
 text = "Enemies: 0"
 horizontal_alignment = 1
 justification_flags = 3
-script = ExtResource("7_44bia")
+script = ExtResource("2_621w6")
 
 [node name="Top HUD" type="ColorRect" parent="HUD"]
 offset_left = 16.0

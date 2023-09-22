@@ -5,10 +5,10 @@ public partial class Spawners : Node2D
 {
 	[Signal]
 	public delegate void EnemySpawnWithArgumentEventHandler(int amount);
-	
+
 	[Signal]
 	public delegate void EnemyCounterIncreaseEventHandler();
-	
+
 	[Signal]
 	public delegate void EnemyCounterDecreaseEventHandler();
 
@@ -35,7 +35,10 @@ public partial class Spawners : Node2D
 		{
 			int randomNumber = random.Next(0, 4);
 			var enemy = DetonixScene.Duplicate() as Detonix;
-			Vector2 randomOffset = new Vector2((float)random.NextDouble() * 10 - 5, (float)random.NextDouble() * 10 - 5);
+			Vector2 randomOffset = new Vector2(
+				(float)random.NextDouble() * 10 - 5,
+				(float)random.NextDouble() * 10 - 5
+			);
 
 			switch (randomNumber)
 			{

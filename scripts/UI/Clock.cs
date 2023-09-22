@@ -5,7 +5,6 @@ public partial class Clock : Sprite2D
 {
 	private float MaxTime = 33f;
 	private float CurrentTime = 33f;
-
 	private ColorRect ClockProgress;
 
 	public override void _Ready()
@@ -22,8 +21,8 @@ public partial class Clock : Sprite2D
 			ClockProgress.Scale = new Vector2(1, scale_factor);
 
 			float redComponent = 1 - scale_factor;
-            float greenComponent = scale_factor;
-            ClockProgress.Color = new Color(redComponent, greenComponent, 0);
+			float greenComponent = scale_factor;
+			ClockProgress.Color = new Color(redComponent, greenComponent, 0);
 		}
 	}
 }
