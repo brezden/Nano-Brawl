@@ -3,17 +3,17 @@ using System;
 
 public partial class Score : Label
 {
-	int enemies = 0;
+	int Enemies = 0;
 
 	public void IncreaseScore()
 	{
-		enemies++;
-		Text = "Enemies: " + enemies;
+		Enemies++;
+		Text = "Enemies: " + Enemies;
 	}
 
 	public void DecreaseScore()
 	{
-		enemies--;
-		Text = "Enemies: " + enemies;
+		Enemies--;
+		Text = "Enemies: " + Enemies;
 	}
 }

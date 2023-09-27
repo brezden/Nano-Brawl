@@ -3,32 +3,32 @@ using System;
 
 public partial class Detonix : CharacterBody2D
 {
-	private AnimationPlayer _animationPlayer;
-	private Node target;
-	private Vector2 targetPosition;
-	private float speed = 20f;
+	private AnimationPlayer AnimationPlayer;
+	private Node Target;
+	private Vector2 TargetPosition;
+	private float Speed = 20f;
 	private float delta;
 
 	public override void _Ready()
 	{
-		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		this.delta = (float)delta;
-		_animationPlayer.Play("idle");
+		AnimationPlayer.Play("idle");
 	}
 
 	public void SetTarget(Player playerNode)
 	{
-		targetPosition = playerNode.Position;
-		Vector2 direction = (targetPosition - Position).Normalized();
-		Velocity = direction * speed;
+		TargetPosition = playerNode.Position;
+		Vector2 Direction = (TargetPosition - Position).Normalized();
+		Velocity = Direction * Speed;
 
-		if (Position.DistanceTo(targetPosition) < speed * this.delta)
+		if (Position.DistanceTo(TargetPosition) < Speed * this.delta)
 		{
-			Position = targetPosition;
+			Position = TargetPosition;
 		}
 		else
 		{

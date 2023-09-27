@@ -9,35 +9,25 @@ public partial class Player : Godot.CharacterBody2D
 	int Friction = 500;
 
 	[Signal]
-	public delegate void EnemyHitWithArgumentEventHandler(Detonix detonix);
+	public delegate void EnemyHitWithArgumentEventHandler(Detonix Detonix);
 
 	public override void _Ready() { }
-
-	// AnimationPlayer RobotAnimation;
-	// AnimationTree RobotAnimationTree;
-	// AnimationNodeStateMachinePlayback StateMachine;
-
-	// public override void _Ready() {
-	//     RobotAnimation = (AnimationPlayer)GetNode("RobotAnimation");
-	//     RobotAnimationTree = (AnimationTree)GetNode("RobotAnimationTree");
-	//     StateMachine = (AnimationNodeStateMachinePlayback)RobotAnimationTree.Get("parameters/playback");
-	// }
 
 	public override void _PhysicsProcess(double delta)
 	{
 		for (int i = 0; i < GetSlideCollisionCount(); i++)
 		{
-			KinematicCollision2D collisionObject = GetSlideCollision(i);
-			Node collidedNode = collisionObject?.GetCollider() as Node;
+			KinematicCollision2D CollisionObject = GetSlideCollision(i);
+			Node CollidedNode = CollisionObject?.GetCollider() as Node;
 
 			if (
-				collisionObject != null
-				&& collidedNode != null
-				&& collidedNode.IsInGroup("enemy")
-				&& collidedNode is Detonix
+				CollisionObject != null
+				&& CollidedNode != null
+				&& CollidedNode.IsInGroup("enemy")
+				&& CollidedNode is Detonix
 			)
 			{
-				EmitSignal(nameof(EnemyHitWithArgument), collidedNode as Detonix);
+				EmitSignal(nameof(EnemyHitWithArgument), CollidedNode as Detonix);
 			}
 		}
 
@@ -48,15 +38,10 @@ public partial class Player : Godot.CharacterBody2D
 
 		if (InputVector != Vector2.Zero)
 		{
-			// RobotAnimationTree.Set("parameters/Idle/blend_position", InputVector);
-			// RobotAnimationTree.Set("parameters/Run/blend_position", InputVector);
-			// StateMachine.Travel("Run");
-
 			Velocity = Velocity.MoveToward(InputVector * MaxSpeed, Acceleration * (float)delta);
 		}
 		else
 		{
-			// StateMachine.Travel("Idle");
 			Velocity = Velocity.MoveToward(Vector2.Zero, Friction * (float)delta);
 		}
 		MoveAndSlide();

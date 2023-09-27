@@ -15,10 +15,17 @@
 [node name="Main" type="Node2D"]
 position = Vector2(17, 23)
 
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = -23.0
+offset_right = 303.0
+offset_bottom = 297.0
+color = Color(0, 0, 0, 1)
+
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Score" type="Label" parent="HUD" groups=["score"]]
-z_index = 1
 z_as_relative = false
 offset_left = 15.0
 offset_right = 74.0
@@ -30,49 +37,29 @@ horizontal_alignment = 1
 justification_flags = 3
 script = ExtResource("2_621w6")
 
-[node name="Top HUD" type="ColorRect" parent="HUD"]
-offset_left = 16.0
-offset_right = 304.0
-offset_bottom = 24.0
-color = Color(0, 0, 0, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/Top HUD"]
-position = Vector2(277, 12)
+[node name="PowerUpBox" type="Sprite2D" parent="HUD"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(293, 12)
 texture = ExtResource("3_ug2a7")
 
-[node name="Side HUD" type="ColorRect" parent="HUD"]
-offset_left = 304.0
-offset_right = 320.0
-offset_bottom = 312.0
-color = Color(0, 0, 0, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/Side HUD"]
+[node name="Clock" type="Sprite2D" parent="HUD"]
 z_index = 1
-position = Vector2(8, 162)
+position = Vector2(312, 162)
 texture = ExtResource("4_toruy")
 script = ExtResource("10_eafwj")
 
-[node name="ClockProgress" type="ColorRect" parent="HUD/Side HUD/Sprite2D"]
+[node name="ClockProgress" type="ColorRect" parent="HUD/Clock"]
 offset_left = 3.0
 offset_top = 138.0
 offset_right = 9.0
 offset_bottom = 427.0
 rotation = 3.14159
 color = Color(0.921569, 0.694118, 0.117647, 1)
-
-[node name="Side HUD3" type="ColorRect" parent="HUD"]
-offset_top = 312.0
-offset_right = 320.0
-offset_bottom = 320.0
-color = Color(0, 0, 0, 1)
-
-[node name="Side HUD2" type="ColorRect" parent="HUD"]
-offset_right = 16.0
-offset_bottom = 312.0
-color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Gameplay" type="Node2D" parent="."]
-z_index = -1
+z_index = 1
 script = ExtResource("6_0ffet")
 
 [node name="area_one" parent="Gameplay" instance=ExtResource("2_kcgkt")]

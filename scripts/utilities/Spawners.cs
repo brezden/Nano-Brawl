@@ -17,7 +17,7 @@ public partial class Spawners : Node2D
 	private Marker2D RightSpawner;
 	private Marker2D TopSpawner;
 	private Marker2D BottomSpawner;
-	private static Random random = new Random();
+	private static Random Random = new Random();
 
 	public override void _Ready()
 	{
@@ -29,42 +29,41 @@ public partial class Spawners : Node2D
 		SpawnEnemies(15);
 	}
 
-	public void SpawnEnemies(int enemyAmount)
+	public void SpawnEnemies(int EnemyAmount)
 	{
-		for (int i = 0; i < enemyAmount; i++)
+		for (int i = 0; i < EnemyAmount; i++)
 		{
-			int randomNumber = random.Next(0, 4);
-			var enemy = DetonixScene.Duplicate() as Detonix;
-			Vector2 randomOffset = new Vector2(
-				(float)random.NextDouble() * 10 - 5,
-				(float)random.NextDouble() * 10 - 5
+			int SpawnerNumber = Random.Next(0, 4);
+			var Enemy = DetonixScene.Duplicate() as Detonix;
+			Vector2 RandomOffset = new Vector2(
+				(float)Random.NextDouble() * 10 - 5,
+				(float)Random.NextDouble() * 10 - 5
 			);
 
-			switch (randomNumber)
+			switch (SpawnerNumber)
 			{
 				case 0:
-					enemy.Position = this.LeftSpawner.Position + randomOffset;
+					Enemy.Position = this.LeftSpawner.Position + RandomOffset;
 					break;
 				case 1:
-					enemy.Position = this.RightSpawner.Position + randomOffset;
+					Enemy.Position = this.RightSpawner.Position + RandomOffset;
 					break;
 				case 2:
-					enemy.Position = this.TopSpawner.Position + randomOffset;
+					Enemy.Position = this.TopSpawner.Position + RandomOffset;
 					break;
 				case 3:
-					enemy.Position = this.BottomSpawner.Position + randomOffset;
+					Enemy.Position = this.BottomSpawner.Position + RandomOffset;
 					break;
 			}
 
-			AddChild(enemy);
+			AddChild(Enemy);
 			EmitSignal(SignalName.EnemyCounterIncrease);
 		}
 	}
 
-	public void _on_player_enemy_hit_with_argument(Detonix enemy)
+	public void _on_player_Enemy_hit_with_argument(Detonix Enemy)
 	{
-		enemy.QueueFree();
-		// SpawnEnemies(1);
+		Enemy.QueueFree();
 		EmitSignal(SignalName.EnemyCounterDecrease);
 	}
 }
