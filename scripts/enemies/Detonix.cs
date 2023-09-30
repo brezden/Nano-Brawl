@@ -34,5 +34,5 @@ public partial class Detonix : CharacterBody2D
 		{
 			MoveAndSlide();
 		}
-	}
+    }
 }
