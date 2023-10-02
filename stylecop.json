@@ -2,18 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
   "settings": {
     "documentationRules": {
-      "documentInternalElements": false
-    },
-    "namingRules": {
-      "allowAsyncSuffix": true,
-      "allowUnderscoreInPrivateFields": true,
-      "usePascalCaseForPrivateStaticFields": true,
-      "usePascalCaseForPublicFields": true,
-      "usePascalCaseForProtectedFields": true,
-      "usePascalCaseForInternalFields": true,
-      "usePascalCaseForPrivateInternalFields": true,
-      "useCamelCaseForPrivateFields": true,
-      "useCamelCaseForProtectedInternalFields": true
+      "documentInterfaces": false,
+      "documentExposedElements": false
     }
   }
 }

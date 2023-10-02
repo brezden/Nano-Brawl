@@ -12,4 +12,13 @@
 
 ## Formatter
 
-This project uses CSharpier to format code. The configuration file is located at `.csharpier.json`
+This project uses StyleCop to enforce coding standards and maintain a consistent coding style.
+
+### Hide Certain Warnings
+
+To suppress specific warnings at the project level:
+
+1. Go to `Project`.
+2. Navigate to `Properties`.
+3. Choose the `Build` tab.
+4. Enter the desired warning codes into the `Suppress Warnings` field.

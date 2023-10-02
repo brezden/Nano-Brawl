@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs",
     "\\scripts",
-    "\\scripts\\player"
+    "\\scripts\\utilities"
   ],
+  "SelectedNode": "\\scripts\\utilities\\Spawners.cs",
   "PreviewInSolutionExplorer": false
 }
