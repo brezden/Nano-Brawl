@@ -75,6 +75,7 @@ position = Vector2(0, -2)
 [node name="Power Up" parent="Gameplay" instance=ExtResource("11_vyerm")]
 position = Vector2(77, 89)
 
-[connection signal="EnemyHitWithArgument" from="Gameplay/Player" to="Gameplay/Spawners" method="_on_player_enemy_hit_with_argument"]
+[connection signal="EnemyHitWithArgument" from="Gameplay/Player" to="Gameplay/Spawners" method="OnPlayerEnemyHitWithArgument"]
 [connection signal="EnemyCounterDecrease" from="Gameplay/Spawners" to="HUD/Score" method="DecreaseScore"]
 [connection signal="EnemyCounterIncrease" from="Gameplay/Spawners" to="HUD/Score" method="IncreaseScore"]
+[connection signal="body_entered" from="Gameplay/Power Up" to="Gameplay/Power Up" method="OnBodyEntered"]

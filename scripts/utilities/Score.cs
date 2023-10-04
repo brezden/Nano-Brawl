@@ -1,19 +1,19 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class Score : Label
 {
-	int Enemies = 0;
+	private int enemies = 0;
 
 	public void IncreaseScore()
 	{
-		Enemies++;
-		Text = "Enemies: " + Enemies;
+		enemies++;
+		Text = "Enemies: " + enemies;
 	}
 
 	public void DecreaseScore()
 	{
-		Enemies--;
-		Text = "Enemies: " + Enemies;
+		enemies--;
+		Text = "Enemies: " + enemies;
 	}
 }

@@ -1,38 +1,38 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class Detonix : CharacterBody2D
 {
-	private AnimationPlayer AnimationPlayer;
-	private Node Target;
-	private Vector2 TargetPosition;
-	private float Speed = 20f;
+	private AnimationPlayer animationPlayer;
+	private Node target;
+	private Vector2 targetPosition;
+	private float speed = 20f;
 	private float delta;
 
 	public override void _Ready()
 	{
-		AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		this.delta = (float)delta;
-		AnimationPlayer.Play("idle");
+		animationPlayer.Play("idle");
 	}
 
 	public void SetTarget(Player playerNode)
 	{
-		TargetPosition = playerNode.Position;
-		Vector2 Direction = (TargetPosition - Position).Normalized();
-		Velocity = Direction * Speed;
+		targetPosition = playerNode.Position;
+		Vector2 direction = (targetPosition - Position).Normalized();
+		Velocity = direction * speed;
 
-		if (Position.DistanceTo(TargetPosition) < Speed * this.delta)
+		if (Position.DistanceTo(targetPosition) < speed * this.delta)
 		{
-			Position = TargetPosition;
+			Position = targetPosition;
 		}
 		else
 		{
 			MoveAndSlide();
 		}
-    }
+	}
 }

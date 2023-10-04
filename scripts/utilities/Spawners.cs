@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class Spawners : Node2D
 {
@@ -12,58 +12,58 @@ public partial class Spawners : Node2D
 	[Signal]
 	public delegate void EnemyCounterDecreaseEventHandler();
 
-	private Node DetonixScene;
-	private Marker2D LeftSpawner;
-	private Marker2D RightSpawner;
-	private Marker2D TopSpawner;
-	private Marker2D BottomSpawner;
-	private static Random Random = new Random();
+	private Node detonixScene;
+	private Marker2D leftSpawner;
+	private Marker2D rightSpawner;
+	private Marker2D topSpawner;
+	private Marker2D bottomSpawner;
+	private Random random = new Random();
 
 	public override void _Ready()
 	{
-		DetonixScene = ResourceLoader.Load<PackedScene>("res://scenes/enemies/Detonix.tscn").Instantiate();
-		LeftSpawner = GetNode<Marker2D>("Left Spawn");
-		RightSpawner = GetNode<Marker2D>("Right Spawn");
-		TopSpawner = GetNode<Marker2D>("Top Spawn");
-		BottomSpawner = GetNode<Marker2D>("Bottom Spawn");
+		detonixScene = ResourceLoader.Load<PackedScene>("res://scenes/enemies/Detonix.tscn").Instantiate();
+		leftSpawner = GetNode<Marker2D>("Left Spawn");
+		rightSpawner = GetNode<Marker2D>("Right Spawn");
+		topSpawner = GetNode<Marker2D>("Top Spawn");
+		bottomSpawner = GetNode<Marker2D>("Bottom Spawn");
 		SpawnEnemies(15);
 	}
 
-	public void SpawnEnemies(int EnemyAmount)
+	public void SpawnEnemies(int enemyAmount)
 	{
-		for (int i = 0; i < EnemyAmount; i++)
+		for (int i = 0; i < enemyAmount; i++)
 		{
-			int SpawnerNumber = Random.Next(0, 4);
-			var Enemy = DetonixScene.Duplicate() as Detonix;
-			Vector2 RandomOffset = new Vector2(
-				(float)Random.NextDouble() * 10 - 5,
-				(float)Random.NextDouble() * 10 - 5
+			int spawnerNumber = random.Next(0, 4);
+			var enemy = detonixScene.Duplicate() as Detonix;
+			Vector2 randomOffset = new Vector2(
+				((float)random.NextDouble() * 10) - 5,
+				((float)random.NextDouble() * 10) - 5
 			);
 
-			switch (SpawnerNumber)
+			switch (spawnerNumber)
 			{
 				case 0:
-					Enemy.Position = this.LeftSpawner.Position + RandomOffset;
+					enemy.Position = this.leftSpawner.Position + randomOffset;
 					break;
 				case 1:
-					Enemy.Position = this.RightSpawner.Position + RandomOffset;
+					enemy.Position = this.rightSpawner.Position + randomOffset;
 					break;
 				case 2:
-					Enemy.Position = this.TopSpawner.Position + RandomOffset;
+					enemy.Position = this.topSpawner.Position + randomOffset;
 					break;
 				case 3:
-					Enemy.Position = this.BottomSpawner.Position + RandomOffset;
+					enemy.Position = this.bottomSpawner.Position + randomOffset;
 					break;
 			}
 
-			AddChild(Enemy);
+			AddChild(enemy);
 			EmitSignal(SignalName.EnemyCounterIncrease);
 		}
 	}
 
-	public void _on_player_Enemy_hit_with_argument(Detonix Enemy)
+	public void OnPlayerEnemyHitWithArgument(Detonix enemy)
 	{
-		Enemy.QueueFree();
+		enemy.QueueFree();
 		EmitSignal(SignalName.EnemyCounterDecrease);
 	}
 }

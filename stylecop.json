@@ -3,8 +3,28 @@
   "settings": {
     "documentationRules": {
       "documentInterfaces": false,
-      "documentExposedElements": false
+      "documentExposedElements": false,
+      "documentInternalElements": false,
+      "documentPrivateElements": false,
+      "documentPrivateFields": false,
+      "documentationCulture": "en-US"
+    },
+    "indentation": {
+      "indentationSize": 4,
+      "tabSize": 4,
+      "useTabs": true
+    },
+    "orderingRules": {
+      "elementOrder": [
+        "kind",
+        "accessibility",
+        "readonly",
+        "constant",
+        "static"
+      ]
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "allow"
     }
   }
 }
-
