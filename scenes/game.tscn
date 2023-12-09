@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxxikcesg8gvo"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Minimal5x5Monospaced.ttf" id="1_hvjmj"]
+[ext_resource type="Script" path="res://scenes/utilities/Score.cs" id="2_ujq6l"]
+[ext_resource type="Texture2D" uid="uid://dxuipauocju8l" path="res://assets/user_interface/power_up_box.png" id="3_d7r3x"]
+[ext_resource type="Texture2D" uid="uid://d0bhoywjkjjpe" path="res://assets/user_interface/count_down_bar.png" id="4_kexer"]
+[ext_resource type="Script" path="res://scenes/utilities/Clock.cs" id="5_shvwn"]
+[ext_resource type="Script" path="res://scenes/Gameplay.cs" id="6_aph0j"]
+[ext_resource type="PackedScene" uid="uid://dksfo8p82tcqa" path="res://scenes/maps/area_one.tscn" id="7_8o6qh"]
+[ext_resource type="PackedScene" uid="uid://ckiittb21fiqo" path="res://scenes/enemies/Detonix.tscn" id="8_e373l"]
+[ext_resource type="PackedScene" uid="uid://bydbodgvhoa5h" path="res://scenes/player/Player.tscn" id="9_arv1o"]
+[ext_resource type="PackedScene" uid="uid://cbqbwja42or81" path="res://scenes/utilities/Spawners.tscn" id="10_ajprf"]
+[ext_resource type="PackedScene" uid="uid://daw4uk6ica4vf" path="res://scenes/sprites/Power_Up.tscn" id="11_7m157"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(17, 23)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = -23.0
+offset_right = 303.0
+offset_bottom = 297.0
+color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Score" type="Label" parent="HUD" groups=["score"]]
+z_as_relative = false
+offset_left = 15.0
+offset_right = 74.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_hvjmj")
+theme_override_font_sizes/font_size = 8
+text = "Enemies: 0"
+horizontal_alignment = 1
+justification_flags = 3
+script = ExtResource("2_ujq6l")
+
+[node name="PowerUpBox" type="Sprite2D" parent="HUD"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(293, 12)
+texture = ExtResource("3_d7r3x")
+
+[node name="Clock" type="Sprite2D" parent="HUD"]
+z_index = 1
+position = Vector2(312, 162)
+texture = ExtResource("4_kexer")
+script = ExtResource("5_shvwn")
+
+[node name="ClockProgress" type="ColorRect" parent="HUD/Clock"]
+offset_left = 3.0
+offset_top = 138.0
+offset_right = 9.0
+offset_bottom = 427.0
+rotation = 3.14159
+color = Color(0.921569, 0.694118, 0.117647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Gameplay" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("6_aph0j")
+
+[node name="area_one" parent="Gameplay" instance=ExtResource("7_8o6qh")]
+
+[node name="Detonix" parent="Gameplay" instance=ExtResource("8_e373l")]
+position = Vector2(7, 145)
+
+[node name="Player" parent="Gameplay" instance=ExtResource("9_arv1o")]
+
+[node name="Spawners" parent="Gameplay" instance=ExtResource("10_ajprf")]
+position = Vector2(0, -2)
+
+[node name="Power Up" parent="Gameplay" instance=ExtResource("11_7m157")]
+position = Vector2(77, 89)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="Gameplay/Power Up" to="Gameplay/Power Up" method="OnBodyEntered"]

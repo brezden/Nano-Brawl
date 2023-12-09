@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjfrdk2o5v32g"
-path="res://.godot/imported/floor.png-e0e47f9bde481bc4742cc72e3ff5e01c.ctex"
+uid="uid://dxj3432k6xai3"
+path="res://.godot/imported/StartGamePromptArrow.png-18e0c3c8af7d1dfa9382be35683726d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/floor.png"
-dest_files=["res://.godot/imported/floor.png-e0e47f9bde481bc4742cc72e3ff5e01c.ctex"]
+source_file="res://assets/user_interface/StartGamePromptArrow.png"
+dest_files=["res://.godot/imported/StartGamePromptArrow.png-18e0c3c8af7d1dfa9382be35683726d0.ctex"]
 
 [params]
 

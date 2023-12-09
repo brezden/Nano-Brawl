@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://beepssgt1ecve"
-path="res://.godot/imported/Minimal5x5Monospaced.ttf-a8b543794ee37bd12c3f7a26dfd71073.fontdata"
+uid="uid://epwd0uppd2qq"
+path="res://.godot/imported/Retro Gaming.ttf-7ea05d60dde1dd26db0e8ab6d3ff7f64.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Minimal5x5Monospaced.ttf"
-dest_files=["res://.godot/imported/Minimal5x5Monospaced.ttf-a8b543794ee37bd12c3f7a26dfd71073.fontdata"]
+source_file="res://assets/fonts/Retro Gaming.ttf"
+dest_files=["res://.godot/imported/Retro Gaming.ttf-7ea05d60dde1dd26db0e8ab6d3ff7f64.fontdata"]
 
 [params]
 

@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Nano Brawl"
-run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+run/main_scene="res://scenes/menu/Start_Screen.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.png"
 
 [display]
