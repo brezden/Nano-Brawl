@@ -31,12 +31,17 @@ offset_right = 320.0
 offset_bottom = 320.0
 script = ExtResource("1_22bdv")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="VisibilityTimer" type="Timer" parent="CenterContainer"]
+wait_time = 0.8
+autostart = true
+
+[node name="StartGameContainer" type="HBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="StartGamePrompt" type="Label" parent="CenterContainer/HBoxContainer"]
+[node name="StartGamePrompt" type="Label" parent="CenterContainer/StartGameContainer"]
 layout_mode = 2
 text = "press any button"
 label_settings = SubResource("LabelSettings_k766y")
@@ -44,10 +49,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/StartGameContainer"]
 custom_minimum_size = Vector2(10, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_bsfv7")
 expand_mode = 1
+
+[connection signal="timeout" from="CenterContainer/VisibilityTimer" to="CenterContainer" method="OnTimerTimeout"]
