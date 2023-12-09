@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxxikcesg8gvo"]
+[gd_scene load_steps=15 format=3 uid="uid://bxxikcesg8gvo"]
 
 [ext_resource type="FontFile" path="res://assets/fonts/Minimal5x5Monospaced.ttf" id="1_hvjmj"]
 [ext_resource type="Script" path="res://scenes/utilities/Score.cs" id="2_ujq6l"]
@@ -12,10 +12,48 @@
 [ext_resource type="PackedScene" uid="uid://cbqbwja42or81" path="res://scenes/utilities/Spawners.tscn" id="10_ajprf"]
 [ext_resource type="PackedScene" uid="uid://daw4uk6ica4vf" path="res://scenes/sprites/Power_Up.tscn" id="11_7m157"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11hjv"]
+texture = ExtResource("1_gp3k4")
+margins = Vector2i(4, 4)
+separation = Vector2i(8, 8)
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8psj3"]
+tile_shape = 1
+tile_size = Vector2i(24, 12)
+sources/0 = SubResource("TileSetAtlasSource_11hjv")
+
 [node name="Main" type="Node2D"]
 position = Vector2(17, 23)
 
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+texture_filter = 3
+rotation = 0.000378066
+tile_set = SubResource("TileSet_8psj3")
+cell_quadrant_size = 24
+format = 2
+layer_0/name = "Layer 0"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(1048575, 0, 0, 983039, 0, 0, 917503, 0, 0, 851967, 0, 0, 786431, 0, 0, 720895, 0, 0, 655359, 0, 0, 589823, 0, 0, 524287, 0, 0, 458751, 0, 0, 393215, 0, 0, 327679, 0, 0, 262143, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 917511, 0, 0, 983047, 0, 0, 983046, 0, 0, 983045, 0, 0, 983044, 0, 0, 983043, 0, 0, 983042, 0, 0, 983041, 0, 0, 983040, 0, 0, 589826, 0, 0, 524291, 0, 0, 458755, 0, 0, 393220, 0, 0, 327684, 0, 0, 262149, 0, 0, 196613, 0, 0, -131069, 0, 0, -196606, 0, 0, -131070, 0, 0, 65536, 0, 0, 1, 0, 0, -65535, 0, 0, 2, 0, 0, -65534, 0, 0, 3, 0, 0, -65533, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 65539, 0, 0, 131075, 0, 0, 65538, 0, 0, 131074, 0, 0, 65537, 0, 0, 131073, 0, 0, 196608, 0, 0, 131072, 0, 0, 262144, 0, 0, 327680, 0, 0, 262145, 0, 0, 196609, 0, 0, 262146, 0, 0, 196610, 0, 0, 262147, 0, 0, 196611, 0, 0, 262148, 0, 0, 196612, 0, 0, 131077, 0, 0, 327683, 0, 0, 393219, 0, 0, 327682, 0, 0, 393218, 0, 0, 327681, 0, 0, 393217, 0, 0, 458752, 0, 0, 393216, 0, 0, 524288, 0, 0, 589824, 0, 0, 524289, 0, 0, 458753, 0, 0, 524290, 0, 0, 458754, 0, 0, 589825, 0, 0, 655361, 0, 0, 720896, 0, 0, 655360, 0, 0, 786432, 0, 0, 851968, 0, 0, 786433, 0, 0, 720897, 0, 0, 655362, 0, 0, 720898, 0, 0, 655363, 0, 0, 589827, 0, 0, 524292, 0, 0, 458756, 0, 0, 393221, 0, 0, 327685, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458757, 0, 0, 524293, 0, 0, 589828, 0, 0, 655364, 0, 0, 720899, 0, 0, 786435, 0, 0, 851970, 0, 0, 786434, 0, 0, 851969, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 851971, 0, 0, 786436, 0, 0, 720900, 0, 0, 655365, 0, 0, 589829, 0, 0, 524294, 0, 0, 458758, 0, 0, 589830, 0, 0, 655366, 0, 0, 720901, 0, 0, 786437, 0, 0, 851972, 0, 0, 917508, 0, 0, 917509, 0, 0, 851973, 0, 0, 786438, 0, 0, 720902, 0, 0, 851974, 0, 0, 917510, 0, 0, 917504, 0, 0)
+layer_1/name = "Layer 1"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(327687, 0, 0, 262151, 0, 0, 196614, 0, 0, 131078, 0, 0, 65541, 0, 0, 5, 0, 0, -65532, 0, 0, -131068, 0, 0, -196605, 0, 0, -262141, 0, 0, -327678, 0, 0, -262142, 0, 0, -196607, 0, 0, -131071, 0, 0, -65536, 0, 0, 0, 0, 0, 131071, 0, 0, 196607, 0, 0, 458759, 0, 0, 589831, 0, 0, 720903, 0, 0, 851975, 0, 0)
+layer_2/name = "Layer 2"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = true
+layer_2/y_sort_origin = 0
+layer_2/z_index = 2
+layer_2/tile_data = PackedInt32Array(65535, 0, 0, -1, 0, 0, -131072, 0, 0, -196608, 0, 0, -262143, 0, 0, -327679, 0, 0, -393214, 0, 0, -458750, 0, 0, -393213, 0, 0, -327677, 0, 0, -262140, 0, 0, -196604, 0, 0, -131067, 0, 0, -65531, 0, 0, 6, 0, 0, 65542, 0, 0, 131079, 0, 0, 196615, 0, 0, 327687, 0, 0, 458759, 0, 0, 589831, 0, 0, 720903, 0, 0)
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_left = -17.0
 offset_top = -23.0
 offset_right = 303.0
@@ -24,6 +62,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 0
+visible = false
 
 [node name="Score" type="Label" parent="HUD" groups=["score"]]
 z_as_relative = false
@@ -59,6 +98,7 @@ color = Color(0.921569, 0.694118, 0.117647, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Gameplay" type="Node2D" parent="."]
+visible = false
 z_index = 1
 script = ExtResource("6_aph0j")
 
