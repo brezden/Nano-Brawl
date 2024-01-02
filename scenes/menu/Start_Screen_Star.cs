@@ -4,6 +4,7 @@ using System;
 public partial class Start_Screen_Star : Node2D
 {
 	AnimationPlayer StarAnimation;
+	AudioStreamPlayer StarSound;
 	int animationIndex;
     Random rand = new Random();
 
@@ -11,11 +12,12 @@ public partial class Start_Screen_Star : Node2D
 	{
 		this.Visible = false;
         StarAnimation = this.GetNode<AnimationPlayer>("%StarAnimation");
+		StarSound = this.GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 	}
 
 	private void OnStarTimerTimeout()
-	{
-        if (rand.Next(0, 2) == 0)
+	{	
+        if (rand.Next(0, 3) <= 1)
         {
 			this.Visible = true;
 			this.Position = new Vector2 (rand.Next(32, 288), rand.Next(32, 288));
@@ -34,6 +36,8 @@ public partial class Start_Screen_Star : Node2D
 					StarAnimation.Play("Large");
 					break;
 			}
+
+			StarSound.Play();
         }
     }
 

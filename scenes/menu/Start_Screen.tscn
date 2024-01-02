@@ -50,6 +50,7 @@ theme_override_constants/separation = 15
 alignment = 1
 
 [node name="StartGamePrompt" type="Label" parent="Node2DContainer/CenterContainer/StartGameContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "press any button"
 label_settings = SubResource("LabelSettings_k766y")
