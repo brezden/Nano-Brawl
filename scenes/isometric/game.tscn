@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://uf4rfiamqkek"]
+
+[ext_resource type="Texture2D" uid="uid://r45cnt3aywst" path="res://assets/tile_maps/iso_tileset.png" id="1_yavyd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ly6l"]
+texture = ExtResource("1_yavyd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -8)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -8)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -8)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -8)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSet" id="TileSet_uh7mu"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_1ly6l")
+
+[node name="game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_uh7mu")
+format = 2
+layer_0/name = "Ground"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 327688, 65536, 0, 327689, 65536, 0, 393225, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 458764, 327680, 0, 458765, 327680, 0, 458763, 327680, 0, 458762, 327680, 0, 262153, 327680, 0, 196617, 327680, 0, 131081, 327680, 0, 65536, 131072, 0, 131071, 131072, 0, 131070, 131072, 0, 131069, 131072, 0, 196605, 131072, 0, 262141, 131072, 0, 262140, 131072, 0, 327677, 131072, 0, 393213, 131072, 0, 393212, 131072, 0, 327676, 131072, 0, 196604, 131072, 0, 131068, 131072, 0, 65532, 131072, 0, 65533, 131072, 0, 65534, 131072, 0, 65535, 131072, 0, 0, 131072, 0, -65536, 131072, 0, -1, 131072, 0, -2, 131072, 0, -3, 131072, 0, -4, 131072, 0, -5, 131072, 0, 65531, 131072, 0, 131067, 131072, 0, 196603, 131072, 0, 393211, 131072, 0, 327675, 131072, 0, 262139, 131072, 0)
+layer_1/name = "Above"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 1
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(327692, 0, 0, 327691, 0, 0, 327690, 0, 0, 131078, 0, 0, 65539, 0, 0, 327688, 393216, 0, 1, 393216, 0)
