@@ -1,47 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://uf4rfiamqkek"]
+[gd_scene load_steps=5 format=3 uid="uid://uf4rfiamqkek"]
 
 [ext_resource type="Texture2D" uid="uid://r45cnt3aywst" path="res://assets/tile_maps/iso_tileset.png" id="1_yavyd"]
+[ext_resource type="PackedScene" uid="uid://bydbodgvhoa5h" path="res://scenes/player/Player.tscn" id="2_fyif8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ly6l"]
 texture = ExtResource("1_yavyd")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, -8)
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, -8)
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, -8)
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(0, -8)
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, -8)
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
 6:0/0 = 0
 6:0/0/texture_origin = Vector2i(0, -8)
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, -8)
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 
 [sub_resource type="TileSet" id="TileSet_uh7mu"]
 tile_shape = 1
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(32, 16)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1ly6l")
 
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
+position = Vector2(-17, 0)
 tile_set = SubResource("TileSet_uh7mu")
 format = 2
 layer_0/name = "Ground"
 layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 327688, 65536, 0, 327689, 65536, 0, 393225, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 458764, 327680, 0, 458765, 327680, 0, 458763, 327680, 0, 458762, 327680, 0, 262153, 327680, 0, 196617, 327680, 0, 131081, 327680, 0, 65536, 131072, 0, 131071, 131072, 0, 131070, 131072, 0, 131069, 131072, 0, 196605, 131072, 0, 262141, 131072, 0, 262140, 131072, 0, 327677, 131072, 0, 393213, 131072, 0, 393212, 131072, 0, 327676, 131072, 0, 196604, 131072, 0, 131068, 131072, 0, 65532, 131072, 0, 65533, 131072, 0, 65534, 131072, 0, 65535, 131072, 0, 0, 131072, 0, -65536, 131072, 0, -1, 131072, 0, -2, 131072, 0, -3, 131072, 0, -4, 131072, 0, -5, 131072, 0, 65531, 131072, 0, 131067, 131072, 0, 196603, 131072, 0, 393211, 131072, 0, 327675, 131072, 0, 262139, 131072, 0)
+layer_0/tile_data = PackedInt32Array(262150, 458752, 0, -196601, 0, 0, -131065, 0, 0, -65529, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, -196599, 0, 0, -131063, 0, 0, -65527, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, -196598, 0, 0, -131062, 0, 0, -65526, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, -196597, 0, 0, -131061, 0, 0, -65525, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, -196596, 0, 0, -131060, 0, 0, -65524, 0, 0, 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, -196595, 0, 0, -131059, 0, 0, -65523, 0, 0, 13, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 262157, 0, 0, -262130, 458752, 0, -196594, 0, 0, -131058, 0, 0, -65522, 0, 0, 14, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327687, 458752, 0, 327688, 458752, 0, 327689, 458752, 0, 327690, 458752, 0, 327691, 458752, 0, 327692, 458752, 0, 327693, 458752, 0, 327694, 458752, 0, 327695, 458752, 0, 262159, 458752, 0, 196623, 458752, 0, 131087, 458752, 0, 65551, 458752, 0, 15, 458752, 0, -65521, 458752, 0, -131057, 458752, 0, -196593, 458752, 0, 196614, 458752, 0, 131078, 458752, 0, 65542, 458752, 0, 6, 458752, 0, -65530, 458752, 0, -131066, 458752, 0, -196602, 458752, 0, -262138, 458752, 0, -262137, 458752, 0, -262136, 458752, 0, -262135, 458752, 0, -262134, 458752, 0, -262133, 458752, 0, -262132, 458752, 0, -262131, 458752, 0)
 layer_1/name = "Above"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 1
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(327692, 0, 0, 327691, 0, 0, 327690, 0, 0, 131078, 0, 0, 65539, 0, 0, 327688, 393216, 0, 1, 393216, 0)
+layer_1/tile_data = PackedInt32Array(-327675, 65536, 0, -327674, 65536, 0, -327673, 65536, 0, -327672, 65536, 0, -262139, 65536, 0, -196603, 65536, 0, -131067, 65536, 0, -65531, 65536, 0, 5, 65536, 0, 65541, 65536, 0, 131077, 65536, 0, 196613, 65536, 0, -327671, 65536, 0, -327670, 65536, 0, -327669, 65536, 0, -327668, 65536, 0, -327667, 65536, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_fyif8")]
+z_index = 1
