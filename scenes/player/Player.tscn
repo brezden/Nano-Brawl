@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bydbodgvhoa5h"]
 
 [ext_resource type="Script" path="res://scenes/player/Player.cs" id="1_c6oyn"]
-[ext_resource type="Texture2D" uid="uid://c4hee0qojnugv" path="res://assets/sprites/player/Atomix.png" id="1_rgugo"]
+[ext_resource type="Texture2D" uid="uid://dqvie0jl0d00t" path="res://assets/sprites/player/AtomixIso.png" id="2_fn5bd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xghin"]
 radius = 7.0
@@ -13,9 +13,9 @@ script = ExtResource("1_c6oyn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
-texture = ExtResource("1_rgugo")
+texture = ExtResource("2_fn5bd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 4)
+position = Vector2(2, 10)
 scale = Vector2(0.682033, -0.339154)
 shape = SubResource("CapsuleShape2D_xghin")
